@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacer | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dashboard-grid { 
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .dashboard-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (min-width: 1024px) {
+            .dashboard-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+        .token-card { background: linear-gradient(135deg, #2563EB 0%, #16A34A 100%); }
+        .news-ticker { animation: ticker 20s linear infinite; }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-landmark text-blue-600 text-xl"></i>
+            <span class="font-bold text-lg">Bitacer</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="fas fa-bell"></i>
+            </a>
+            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                <i class="fas fa-user text-blue-600"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+        
+        <div class="dashboard-grid">
+            <!-- Token Balance Card -->
+            <div class="token-card rounded-xl p-6 text-white shadow-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <p class="text-sm opacity-80">Total Balance</p>
+                        <h2 class="text-3xl font-bold">₹1,24,560</h2>
+                    </div>
+                    <i class="fas fa-wallet text-2xl"></i>
+                </div>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                        <p class="text-xs opacity-80">BTCX</p>
+                        <p class="font-medium">12,450</p>
+                    </div>
+                    <div>
+                        <p class="text-xs opacity-80">ETH</p>
+                        <p class="font-medium">1.24</p>
+                    </div>
+                    <div>
+                        <p class="text-xs opacity-80">INR</p>
+                        <p class="font-medium">24,560</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NFT Portfolio Card -->
+            <div class="bg-white rounded-xl p-6 shadow">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold">NFT Portfolio</h3>
+                    <a href="my-assets.html" class="text-blue-600 text-sm hover:underline">View All</a>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-400">+3</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="bg-white rounded-xl p-6 shadow">
+                <h3 class="font-bold mb-4">Quick Actions</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="marketplace.html" class="bg-blue-50 text-blue-600 py-3 rounded-lg flex flex-col items-center justify-center hover:bg-blue-100 transition">
+                        <i class="fas fa-search mb-1"></i>
+                        <span class="text-sm">Browse Land</span>
+                    </a>
+                    <a href="exchange.html" class="bg-green-50 text-green-600 py-3 rounded-lg flex flex-col items-center justify-center hover:bg-green-100 transition">
+                        <i class="fas fa-exchange-alt mb-1"></i>
+                        <span class="text-sm">Swap Tokens</span>
+                    </a>
+                    <a href="wallet.html" class="bg-purple-50 text-purple-600 py-3 rounded-lg flex flex-col items-center justify-center hover:bg-purple-100 transition">
+                        <i class="fas fa-rupee-sign mb-1"></i>
+                        <span class="text-sm">Add Funds</span>
+                    </a>
+                    <a href="my-assets.html" class="bg-yellow-50 text-yellow-600 py-3 rounded-lg flex flex-col items-center justify-center hover:bg-yellow-100 transition">
+                        <i class="fas fa-chart-line mb-1"></i>
+                        <span class="text-sm">Track ROI</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Ticker -->
+        <div class="bg-white rounded-xl p-4 mt-6 shadow overflow-hidden">
+            <div class="flex items-center space-x-3 mb-2">
+                <i class="fas fa-newspaper text-blue-600"></i>
+                <h3 class="font-bold">Market Updates</h3>
+            </div>
+            <div class="relative overflow-hidden h-6">
+                <div class="news-ticker whitespace-nowrap absolute top-0 left-0">
+                    <span class="mr-8">📈 BTCX up 5.2% today</span>
+                    <span class="mr-8">🏡 New land listings in Bangalore</span>
+                    <span class="mr-8">🔄 Token swap fees reduced to 0.5%</span>
+                    <span class="mr-8">📢 KYC verification now faster</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-3 px-4">
+        <a href="dashboard.html" class="text-blue-600 flex flex-col items-center">
+            <i class="fas fa-home"></i>
+            <span class="text-xs mt-1">Home</span>
+        </a>
+        <a href="marketplace.html" class="text-gray-600 flex flex-col items-center">
+            <i class="fas fa-store"></i>
+            <span class="text-xs mt-1">Market</span>
+        </a>
+        <a href="wallet.html" class="text-gray-600 flex flex-col items-center">
+            <i class="fas fa-wallet"></i>
+            <span class="text-xs mt-1">Wallet</span>
+        </a>
+        <a href="settings.html" class="text-gray-600 flex flex-col items-center">
+            <i class="fas fa-cog"></i>
+            <span class="text-xs mt-1">Settings</span>
+        </a>
+    </div>
+</body>
+</html>
